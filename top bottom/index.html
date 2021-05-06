@@ -1,0 +1,176 @@
+<!-- this script got from www.javascriptfreecode.com coded by: Kerixa Inc. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+<style>
+@charset "UTF-8";
+@import "https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #314a9c;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.875em;
+}
+
+.container {
+  margin-top: 50px;
+  box-shadow: 10px 10px 0 #253875;
+  background-color: #fff;
+}
+
+a {
+  border-bottom: 1px dotted;
+  color: #314a9c;
+}
+a:hover {
+  border-bottom: 1px solid;
+  text-decoration: none;
+  color: #253875;
+}
+
+.header-6 {
+  display: block;
+  font-weight: 400;
+}
+
+.table {
+  line-height: 1.625em;
+}
+.table thead th {
+  border-top: 0;
+  border-color: #f6414a;
+  font-weight: 400;
+}
+.table tbody th,
+.table tbody td {
+  border-top-color: #d9dff3;
+}
+.table th:not(:first-child), .table td:not(:first-child) {
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .table-responsive {
+    margin: 15px 0;
+    border: solid 1px #d9dff3;
+  }
+  .table-responsive .table {
+    min-width: 700px;
+  }
+}
+.table-collapse .collapse-control {
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.table-collapse .collapse-control:not(.collapsed), .table-collapse .collapse-control:hover {
+  background-color: #d9dff3;
+}
+.table-collapse .collapse-control:not(.collapsed) td, .table-collapse .collapse-control:hover td {
+  border-top-color: #fff;
+}
+.table-collapse .collapse-control td:first-child {
+  position: relative;
+  padding-left: 2.25em;
+}
+.table-collapse .collapse-control td:first-child::before {
+  content: '👆';
+  position: absolute;
+  left: 0.75em;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+}
+.table-collapse .collapse-control.collapsed td:first-child::before {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+.table-collapse .collapse-td {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: 0;
+  background-color: #d9dff3;
+}
+</style>
+
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="table-responsive">
+<table class="table table-collapse">
+<thead>
+<tr>
+<th>Fund name</th>
+<th>Code</th>
+<th>Series</th>
+<th>Asset class</th>
+<th>Risk</th>
+<th>MER</th>
+</tr>
+</thead>
+<tbody id="handlebarsFundTable"></tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<script id="fundTableTemplate" type="text/x-handlebars-template">
+	{{#each funds}}
+		<tr class="collapse-control collapsed" data-toggle="collapse" data-target="#collaspe{{code}}" aria-expanded="false">
+			<td><a href="#">{{name}}</a></td>
+			<td>{{code}}</td>
+			<td>{{series}}</td>
+			<td>{{assetClass}}</td>
+			<td>{{risk}}</td>
+			<td>{{mer}}</td>
+		</tr>
+		<tr>
+			<td colspan="6" class="collapse-td">
+				<div class="collapse-content collapse" id="collaspe{{code}}">
+					<span class="header-6">Investment objective</span>
+					<p>{{objective}}</p>
+				</div>
+			</td>
+		</tr>
+	{{/each}}
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js'></script>
+<script id="rendered-js">
+console.clear();
+
+const fundData = {
+  funds: [
+  {
+    name: 'PH&N Canadian Money Market Fund',
+    code: '1234',
+    series: 'F',
+    assetClass: 'Money Market Funds',
+    risk: 'low',
+    mer: 0.12,
+    objective: 'He said that I was going to get to rob the bank for real. I think like a girl, I think. Not to discriminate against budgets, I feel that independent films tend to ask more questions and don\'t pretend to know as much as the bigger films, which tend to think they know everything. I\'m not a good enough actor to become a character. Then, telling Derek Cianfrance that I\'d ever I could rob a bank I\'d do it on my motorcycle, and he said \'That\'s weird, I just wrote a script about that\'.' },
+  {
+    name: 'PH&N Bond Fund',
+    code: '8901',
+    series: 'F',
+    assetClass: 'Fixed Income Funds',
+    risk: 'low',
+    mer: 0.34,
+    objective: 'It\'s nice to be around people that have a sense of the world around them, that are, in general, more conscious and conscientious. I went through puberty in a theme park. Anything happens a minute either side of that, and you\'re on your own. I think the one thing I love most about being an adult is the right to buy candy whenever and wherever I want. I won\'t eat my cereal.' },
+  {
+    name: 'PH&N Balanced Fund',
+    code: '567',
+    series: 'F',
+    assetClass: 'Balanced Funds and Portfolio Solutions',
+    risk: 'low to meduim',
+    mer: 0.56,
+    objective: 'I don\'t carry a gun. Change moves in spirals, not circles. Hey girl, I brought home a few bottles of wine since I know you needed more corks for that pinterest project. We\'re always changing. I could be whatever you want.' }] };
+
+var fundTableTemplateSource = document.getElementById('fundTableTemplate').innerHTML;
+var fundTableTemplate = Handlebars.compile(fundTableTemplateSource);
+document.getElementById('handlebarsFundTable').innerHTML = fundTableTemplate(fundData);
+</script><a target='_blank' href='http://www.javascriptfreecode.com/' style='font-size: 8pt; text-decoration: none'>JavaScript Codes</a>

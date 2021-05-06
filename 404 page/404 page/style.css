@@ -1,0 +1,48 @@
+body{
+    background: url(rasm.jpg), linear-gradient(to right, #000081, #000000);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    font-family: 'Poppins', sans-serif;
+}
+div{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+p{
+    margin: 0;
+    font-size: 300px;
+    color: #fff;
+    text-shadow: 1rem 0 2rem #000000;
+    transition: 0.5s;
+}
+p:first-child{
+    transform: translateX(25%);
+    z-index: 2;
+}
+p:nth-child(2){
+    transform: translateX(-10%);
+}
+p:nth-child(3){
+    transform: translateX(-50%);
+    z-index: -2;
+}
+.text{
+    color: rgb(255, 255, 255);
+}
+h3{
+    text-transform: uppercase;
+}
+button{
+    width: 100%;
+    border: 3px solid #60c268;
+    outline: none;
+    padding: 1rem 2rem;
+    color: rgb(0, 0, 0);
+    background: #f0f0e5;
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+}

@@ -1,0 +1,43 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"></head><style>P#abzas {text-indent:1.5em;text-align:justify;color:black;font-family:Arial;font-size:16;}P#title {text-align:center;color:red;font-family:Arial;font-size:16;font-weight:bold;}</style><body bgcolor="white">
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<p style="text-indent: 0; line-height: 150%; margin-left: 30; margin-right: 30; margin-top: 10; margin-bottom: 10" align="center"><font face="Arial" color="maroon"><b><font size="6">
+<span id="txt2"></span>
+      <script>
+        window.onload = function () { getTime(); }
+        function getTime() {
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          // add a zero in front of numbers<10  
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt2').innerHTML = h + ":" + m + ":" + s;
+          setTimeout(function () { getTime() }, 1000);
+        }
+        //setInterval("getTime()",1000);//another way  
+        function checkTime(i) {
+          if (i < 10) {
+            i = "0" + i;
+          }
+          return i;
+        }  
+      </script>
+
+
+</font></b></font></p>
+
+ 
+
+
+
+
+
+
+
+
+
+</body></html>

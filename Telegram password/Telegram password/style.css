@@ -1,0 +1,102 @@
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #2e2d2d;
+}
+.joylashuv{
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 40px;
+}
+.joylashuv h2{
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+.password{
+    position: relative;
+}
+.password input{
+    width: 60%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #ff0000;
+    margin-left: 80px;
+    margin-bottom: 30px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #fa2d2d;
+    outline: none;
+}
+.password label{
+    position: absolute;
+    color: #fa2d2d;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    margin-left: 80px;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+.password input:focus ~ label{
+    top: -20px;
+}
+.joylashuv button{
+    height: 60px;
+    width: 240px;
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+    outline: none;
+    margin-left: 80px;
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.1);
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+}
+button:before{
+    content: "Yuborish";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins',sans-serif;
+    font-size: 25px;
+    padding: 17px 0;
+    color: #fcfcfc;
+    cursor: pointer;
+}
+button:after{
+    content: "";
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    left: -90px;
+    top: -200px;
+    z-index: -1;
+    background-color: #fa2d2d;
+}
+#yubor{
+    text-decoration: none;    
+    color: #ffffff;
+}
+#chiqish{
+    margin-left: 170px;
+    color: #fa2d2d;
+    text-decoration: none;
+}
+

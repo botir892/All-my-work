@@ -1,0 +1,118 @@
+<!-- this script got from www.javascriptfreecode.com coded by: Kerixa Inc. -->
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Raleway|Reenie+Beanie);
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    html,
+    body {
+      margin: 5%;
+      font-family: "Raleway", sans-serif;
+      line-height: 1.5em;
+    }
+    
+    img {
+      width: 100%;
+    }
+    
+    a {
+      color: black;
+    }
+    
+    .caption,
+    h1,
+    .date {
+      margin: 0;
+      text-align: center;
+    }
+    
+    .caption,
+    h1 {
+      font-family: "Reenie Beanie", sans-serif;
+      font-size: 2em;
+      padding: 10px 10px 0 10px;
+    }
+    
+    .date {
+      font-size: 0.75em;
+    }
+    
+    .description {
+      font-size: 0.9em;
+      padding: 0 20px 20px 20px;
+      text-align: left;
+    }
+    
+    .container {
+      -webkit-perspective: 1000px;
+              perspective: 1000px;
+      display: inline-block;
+      margin: 3%;
+    }
+    
+    .container:hover .flipper {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+    }
+    
+    .container,
+    .front,
+    .back {
+      width: 250px;
+      height: 250px;
+    }
+    
+    .flipper {
+      -webkit-transition: 0.6s;
+      transition: 0.6s;
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      position: relative;
+    }
+    
+    .front,
+    .back {
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 250px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .front {
+      z-index: 2;
+    }
+    
+    .back {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+    }
+    
+    #content {
+      text-align: center;
+    }
+    </style>
+    
+    <div id="content">
+    
+    <div class="container">
+    <div class="flipper">
+    <div class="front">
+    <img src="https://www.javascriptfreecode.com/images/cherry-blossoms-unsplash.jpg" alt="cherry blossoms">
+    <p class="caption">Cherry blossom</p>
+    </div>
+    <div class="back">
+    <a href="https://www.javascriptfreecode.com" target="_blank">
+    <h1>Cherry blossom</h1>
+    </a>
+    <p class="date">23/07/2020</p>
+    <p class="description">A cherry blossom is the flower of any of several trees of genus Prunus, particularly the Japanese cherry, Prunus serrulata, which is called sakura after the Japanese (桜 or 櫻; さくら).</p>
+    </div>
+    </div>
+    </div>
+    </div>

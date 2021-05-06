@@ -1,0 +1,144 @@
+<!--
+Created By: Shruti Agrawal
+Date: 7 April 2019
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Analog clock</title>
+    </head>
+    <body><style>
+        /*
+        Created By: Shruti Agrawal
+        Date: 7 April 2019
+        */
+
+
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+        body{
+            background-color: #b8adf1;
+        }
+        svg{
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #clock{
+            fill: #fdd;
+            stroke-width: 10;
+            stroke: #f45;
+        }
+        #min, #hour{
+            fill: #f79;
+            stroke-width: 2;
+            stroke: #f39;
+        }
+        #sec{
+            stroke-width: 4;
+            stroke: #f00;
+            stroke-linecap: 4;
+        }
+        #panda{
+            transform-origin: center;
+            animation: move 8s linear infinite;
+        }
+        @keyframes move{
+            0%{transform: rotate(0deg);}
+            25%{transform: rotate(10deg);}
+            50%{transform: rotate(0deg);}
+            75%{transform: rotate(-10deg);}
+            100%{transform: rotate(0deg);}
+        }
+
+</style>
+<script>
+/*
+Created By: Shruti Agrawal
+Date: 7 April 2019
+*/
+
+var hour = document.getElementById('hour');
+var min = document.getElementById('min');
+var sec = document.getElementById('sec');
+
+setInterval(function(){
+    function rotate(id, angle){
+        id.setAttribute('transform', 'rotate('+angle+' 200 250)');
+    }
+    
+    var d = new Date();
+    rotate(sec, 6*d.getSeconds());
+    rotate(min, 6*d.getMinutes());
+    rotate(hour, 30*(d.getHours()%12)+d.getMinutes()/2);
+}, 1000)
+</script>
+        <svg width="400" height="400">    
+
+        <g id='panda'>
+            <!-- ear -->
+            <ellipse cx="120" cy="45" rx='25' ry='22' fill='#222' transform='rotate(-45 120 60)'/>
+            <ellipse cx="280" cy="45" rx='25' ry='22' fill='#222' transform='rotate(45 280 60)'/>
+
+            <!--face-->
+            <ellipse cx="200" cy="110" rx='110' ry='85' fill='#fef' stroke-width=6 stroke='#222'/>
+
+            <!-- eye -->
+            <ellipse cx="160" cy="105" rx='25' ry='22' fill='#222' transform='rotate(-45 160 105)'/>
+            <ellipse cx="154" cy="114" rx='5' ry='5' fill='#fff'/>
+            <ellipse cx="165" cy="100" rx='8' ry='8' fill='#fff'/>
+
+            <ellipse cx="240" cy="105" rx='25' ry='22' fill='#222' transform='rotate(45 240 105)'/>
+            <ellipse cx="246" cy="114" rx='5' ry='5' fill='#fff'/>
+            <ellipse cx="235" cy="100" rx='8' ry='8' fill='#fff'/>
+
+            <ellipse cx="200" cy="120" rx='12' ry='9' fill='#222'/>
+            <ellipse cx="200" cy="120" rx='4' ry='2' fill='#fff'/>
+            <line x1='200' y1='128' x2='200' y2='140' stroke-width=4 stroke='#222'/>
+
+            <polygon points='200, 150 185, 140 215, 140' fill='#a20' stroke-width=1 stroke='#222'/>
+        </g>
+
+        <!-- clock -->
+        <g>
+            <circle cx='200' cy='250' r='90' id='clock'/>
+            <rect id='min' x='195' y='186' height='64' width='8' rx='10' ry='8'/>
+            <rect id='hour' x='195' y='195' height='55' width='10' rx='10' ry='8'/>
+            <line id='sec' x1='200' y1='180' x2='200' y2='250'/>
+            <circle cx='200' cy='250' r='10' fill='#fdd' stroke-width=4 stroke='#f45'/>
+            <text x='192' y='180' stroke-width=2 stroke='#f45'>12</text>
+            <text x='190' y='333' stroke-width=2 stroke='#f45'>6</text>
+            <text x='120' y='255' stroke-width=2 stroke='#f45'>9</text>
+            <text x='270' y='255' stroke-width=2 stroke='#f45'>3</text>
+        </g>
+
+        <!-- hand -->
+        <g>
+            <ellipse cx="134" cy="200" rx='20' ry='17' fill='#222' transform='rotate(20 134 200)'/>
+            <ellipse cx="268" cy="200" rx='20' ry='17' fill='#222' transform='rotate(-20 268 200)'/>
+        </g>
+        </svg>
+        <script>
+            var hour = document.getElementById('hour');
+            var min = document.getElementById('min');
+            var sec = document.getElementById('sec');
+
+            setInterval(function(){
+                function rotate(id, angle){
+                    id.setAttribute('transform', 'rotate('+angle+' 200 250)');
+                }
+                
+                var d = new Date();
+                rotate(sec, 6*d.getSeconds());
+                rotate(min, 6*d.getMinutes());
+                rotate(hour, 30*(d.getHours()%12)+d.getMinutes()/2);
+            }, 1000)
+        </script>
+    </body>
+</html>

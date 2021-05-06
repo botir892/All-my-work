@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #4ef593;
+    background-size: 600% 600%;
+    background-image: linear-gradient(100deg, #65F9A3 00%, #20e070 100%);
+    animation: Gradient 20s ease infinite;
+}
+.card{
+    margin: 60px;
+    width: 1000px;
+    height: 10px;
+}
+.photo{
+    display: flex;
+}
+.photo img{
+    margin-left: 160px;
+    width: 300px;
+}
+nav{
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+}
+ul{
+    display: flex;
+    list-style: none;
+    line-height: 50px;
+}
+ul li{
+    margin: 17px;
+}
+ul li a{
+    position: relative;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+ul li a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    bottom: -5px;
+    transition: 0.4s transform;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+ul li a:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.list{
+    display: block;
+}
+.list h1{
+    font-size: 50px;
+}
+.list p,
+.list h4 {
+    color: #fff;
+}
+.list p{
+    -webkit-text-stroke-width: 1px;
+}
+.list h4{
+    font-size: 20px;
+}
+.list button{
+    width: 200px;
+    height: 40px;
+}
+.text{
+    position: relative;
+}
+.text span{
+    position: relative;
+    display: inline-block;
+}
+
+@keyframes Gradient{
+    0%{background-position: 0% 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%;}
+}

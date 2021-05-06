@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Classic Peace Lily</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div class="card">
+
+        <div class="menu">
+            <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Plants</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            </nav>
+        </div>
+
+        <div class="photo">
+            <img src="plant.png">
+            <div class="list">
+                <br><h1>CLASSIC PEACE LILY</h1>
+                <h4>POPULAR HOUSE PLANT</h4><br><br>
+                <h1>$12</h1><br><br>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, tenetur? Deserunt quam, voluptatum mollitia, assumenda a necessitatibus et voluptate recusandae eaque.</p><br><br>
+                <button type="submit">Add to card</button>
+                <button type="submit">Buy now</button>
+            </div>
+        </div>
+
+        
+        
+    </div>
+
+
+    <script src="anime.min.js"></script>
+
+    
+    <script>
+        const text = document.querySelector('.text');
+        text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+        const animation = anime.timeline({
+            targets : '.text span',
+            easing : 'easeInOutExpo',
+            loop : true,
+        });
+
+        animation
+         .add({
+             rotate : function(){
+                 return anime.random(-360,360)
+             },
+             translateX : function(){
+                 return anime.random(-500,500)
+             },
+             translateY : function(){
+                 return anime.random(-500,500)
+             },
+             duration : 5000,
+             delay : anime.stagger(20),
+         })
+
+
+         .add({
+             rotate : 0,
+             translateX : 0,
+             translateY : 0,
+             duration : 5000,
+             delay : anime.stagger(20),
+         })
+    </script>
+
+
+</body>
+</html>
